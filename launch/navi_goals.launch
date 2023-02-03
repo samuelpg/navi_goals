@@ -7,7 +7,7 @@
   <!-- Launch Rviz configured for navigation -->
   <arg name="rvizconfig" default="$(find navi_goals)/rviz/navigation.rviz"/> <!-- Set config file --> 
   <arg name="task_name" default="classroom_c069_task"/>
-  <arg name="move_base_wait_duration" default="120.0"/>
+  <arg name="move_base_wait_duration" default="6000.0"/>
 
   <arg name="nav_goals_file" default="$(find floorplan-dsl-environments)/tasks/brsu_building_c/$(arg task_name).yaml"/> <!-- Set config file --> 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" if="$(arg use_rviz)" />
