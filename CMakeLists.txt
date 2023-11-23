@@ -9,13 +9,20 @@ project(navi_goals)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   actionlib
-  geometry_msgs
+  geometry_msgs 
+  nav_msgs
+  sensor_msgs
+  gazebo_msgs
+  message_filters
   move_base
   roscpp
   roslib
   tf2
+  rospy
+  tf
 )
 
+# find_package(rclpy REQUIRED)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
@@ -203,5 +210,12 @@ include_directories(
 
 ## 1. Declare a C++ executable, set a name for the generated executable file and the source file to be build
 add_executable(navi_goals src/waypoints.cpp)
+
+# add_executable(ground_truth scripts/ground_truth.py)
+
+add_executable(path_comparison src/path_comparison.cpp)
+target_link_libraries(path_comparison ${catkin_LIBRARIES} ${PCL_LIBRARIES})
+
 ## 2. Set the linking library in the executable file
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} yaml-cpp)
+catkin_python_setup()
