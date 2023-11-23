@@ -6,6 +6,7 @@
   <!-- Launch Rviz configured for navigation -->
   <arg name="rvizconfig" default="$(find navi_goals)/rviz/navigation.rviz"/> <!-- Set config file --> 
   <arg name="task_name" default="classroom_c069_task"/>
+
   <arg name="environment_name" default="brsu_building_c"/>
   <arg name="move_base_wait_duration" default="6000.0"/>
 
